@@ -13,14 +13,16 @@ if numberUno is numberDos
 else
     if numberUno < numberDos and numberUno != NaN and numberDos != NaN
         randomNumber =  generateRandomNumber(numberUno,numberDos)
-        inputNumber = parseInt prompt "Now tries to guess what is the number random!! Rank between #{numberUno} and #{numberDos} ???"
-        if inputNumber != NaN and inputNumber >= numberUno and inputNumber <= numberDos
-            if guessRandomNumber(inputNumber,randomNumber)
-                alert "You guessed pecfectly randomNumber = #{randomNumber} and inputNumber = #{inputNumber}"
+        loop
+            inputNumber = parseInt prompt "Now tries to guess what is the number random!! Rank between #{numberUno} and #{numberDos} ???"
+            if inputNumber != NaN and inputNumber >= numberUno and inputNumber <= numberDos
+                if guessRandomNumber(inputNumber,randomNumber)
+                    alert "You guessed pecfectly randomNumber = #{randomNumber} and inputNumber = #{inputNumber}"
+                    break
+                else
+                    alert "You don't guessed de randomNumber "
             else
-                alert "You don't guessed de randomNumber is #{randomNumber}"
-        else
-            alert "the value only should be number and should be in the range of #{numberUno} to #{numberDos}"
+                alert "the value only should be number and should be in the range of #{numberUno} to #{numberDos}"
     else
         alert "the firts number can't be greater that the second number and the value only should be number"
 
