@@ -1,11 +1,18 @@
-array_thing = []
-loop
-    thing = prompt "Enter any product!!"
-    break unless thing != ''
-    array_thing.push thing
+shopping_list = (array) ->
+    addList = '<ul>'
+    for item in array
+        addList += "<li>#{item[0]} $#{item[1]}</li>"
+    addList += '</ul>'
+    document.write(addList)
 
-console.log array_thing 
-document.write('<ul>')
-for item in array_thing 
-    document.write("<li> #{item} </li>")
-document.write('</ul>')
+array = []
+loop
+    array_product = [] 
+    array_product.push prompt "Enter any product!!"
+    array_product.push prompt "Enter it's price"
+    if array_product[0] and array_product[1] 
+        array.push array_product
+    else
+        break
+
+shopping_list array
